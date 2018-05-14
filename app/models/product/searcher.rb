@@ -17,20 +17,22 @@ module Product
                 return search_result(Product::Entity.all.includes(:sale))
             end
 
-            ids = sale ? ids(Sale.all, :product_id) : []
+            condition = sale;
+            ids = condition ? ids(Sale.all, :product_id) : []
             
             if price_line
-                ids = ids.empty? ?
-                    union(ids, ids_belong_to_price_line(price_line)) :
-                    intersection(ids, ids_belong_to_price_line(price_line))
+                ids = condition ?
+                    intersection(ids, ids_belong_to_price_line(price_line)) :
+                    union(ids, ids_belong_to_price_line(price_line))     
+                condition = true
             end
 
             if category
                 category_ids = category.descendant.map(&:id)
                 category_ids << category.id
-                ids = ids.empty? ?
-                    union(ids, ids_belong_to_category(category_ids)) :
-                    intersection(ids, ids_belong_to_category(category_ids))
+                ids = condition ?
+                    intersection(ids, ids_belong_to_category(category_ids)) :
+                    union(ids, ids_belong_to_category(category_ids))
             end
 
             search_result(Product::Entity.where(id: ids).includes(:sale))
