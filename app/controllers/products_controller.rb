@@ -3,6 +3,13 @@ class ProductsController < ApplicationController
     DEFAULT_PAGE = 1
     DEFAULT_PER = 30
 
+    api :GET, '/products', 'List of product'
+    param :page, [Integer, String], required: false, desc: 'current page'
+    param :per, [Integer, String], required: false, desc: 'product count per page'
+    param :category_id, [Integer, String], required: false, desc: 'ID of category what you want to see'
+    param :price_line_id, [Integer, String], required: false, desc: 'ID of price line what you want to see'
+    param :sale, [TrueClass, String], required: false, desc: 'if you want to see products for sale'
+    formats ['json']
     def index
         # search params
         if category_id = parameters[:category_id]
@@ -22,6 +29,9 @@ class ProductsController < ApplicationController
         })
     end
 
+    api :GET, '/products/:id', 'Show product'
+    param :id, [Integer, String], required: true, desc: 'ID of product'
+    formats ['json']
     def show
         json_response({ product: product_json(Product::Entity.find(params[:id])) })
     end

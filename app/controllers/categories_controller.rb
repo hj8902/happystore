@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 
+    api :GET, '/categories', 'List of category'
+    formats ['json']
     def index
         json_response({categories: categories_json(Category::Entity.root) })
     end

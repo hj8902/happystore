@@ -1,5 +1,7 @@
 class PriceLinesController < ApplicationController
 
+    api :GET, '/price_lines', 'List of price line'
+    formats ['json']
     def index
         json_response({ price_lines: price_lines_json(PriceLine::Entity.all) })
     end
