@@ -3,9 +3,9 @@ namespace :db do
         namespace :dummy do
 
             task create: :environment do
-                # create_categories
-                # create_price_lines
-                # create_products
+                create_categories
+                create_price_lines
+                create_products
                 create_sales
             end
 

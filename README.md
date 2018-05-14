@@ -1,24 +1,43 @@
-# README
+Happy Store API Server
+============================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Structure
+It is tradionally Rails API server. I developed with ruby v2.5.0 and rails v5.2
+You can see the domain structure like below.
 
-Things you may want to cover:
+      Domain
+        └── Category
+                └── Entity
+                └── Hierarchy
+                └── Unit (for join with Product)
+        └── PriceLine
+                └── Entity
+                └── Unit (for join with Product)
+        └── Product
+                └── Entity
+                └── Searcher
+        └── Sale
 
-* Ruby version
+# Setup application
 
-* System dependencies
+## Rails
+First, Install the gems required by the application:
 
-* Configuration
+	bundle
 
-* Database creation
+Second, Execute sql on structure.sql in db folder.
+(If you need dummy data, you can execute a task for creating the data)
 
-* Database initialization
+	rake db:seed:dummy:create 
 
-* How to run the test suite
+## Start Application
+Start the application with below command.
 
-* Services (job queues, cache servers, search engines, etc.)
+	rails s
 
-* Deployment instructions
+## Testing
+You can test this application with below command.
+You can also see test codes in the test folder.
 
-* ...
+	rails test
+

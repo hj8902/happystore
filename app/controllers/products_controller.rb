@@ -15,8 +15,9 @@ class ProductsController < ApplicationController
 
         # search
         searcher = Product::Searcher.new(parameters[:page], parameters[:per])
+
         json_response({ 
-            products: products_json(searcher.search(category, price_line, parameters[:sale])),
+            products: products_json(searcher.search(category, price_line, parameters[:sale] == 'true')),
             pagination: searcher.pagination
         })
     end
