@@ -1,0 +1,27 @@
+en:
+  errors: &errors
+    format: ! "%{message}"
+    messages:
+      blank: "%{attribute} must not be blank"
+      empty: "%{attribute} must not be empty"
+      equal_to: "%{attribute} must be equal"
+      reserved_key: "%{attribute} is reserved key"
+      greater_than: "%{attribute} is greater than %{count}"
+      greater_than_or_equal_to: "%{attribute} is greater than %{count} or equal to %{count}"
+      invalid: "%{attribute} be invalid"
+      less_than: "%{attribute} is less than %{count}"
+      less_than_or_equal_to: "%{attribute} is less than %{count} or equal to %{count}"
+      not_a_number: "%{attribute} must be number"
+      not_an_integer: "%{attribute} must be integer"
+      record_invalid: "record is invalid. %{errors}"
+      too_long: "%{attribute} cannot be over %{count} in length"
+      too_short: "%{attribute} must be over %{count} in length"
+      not_confirmed: "%{attribute} is not confirmed"
+      expired: "%{attribute} is expired"
+      required: "%{attribute} is required"
+      duplicated: "%{attribute} is duplicated"
+    template:
+      body: ! "following attrubutes occur errors:"
+      header:
+        one: "there is a error, so cannot save the %{model}."
+        other: ! "there are %{count} of errors, so cannot save the %{model}."

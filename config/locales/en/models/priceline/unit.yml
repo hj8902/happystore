@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "%{errors}"
+    attributes:
+      priceline/unit:
+        id: id
+        price_line_id: price line id
+        product_id: product id
+  errors:
+    format: "%{message}"

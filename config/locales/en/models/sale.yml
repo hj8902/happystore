@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "%{errors}"
+    attributes:
+      sales:
+        id: id
+        product_id: product id
+        description: descriptin for sale
+        percentage: percentage for sale
+        price: price for sale
+        created_at: created date
+        deleted_at: updated date
+  errors:
+    format: "%{message}"

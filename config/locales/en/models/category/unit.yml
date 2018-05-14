@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "%{errors}"
+    attributes:
+      category/unit:
+        id: id
+        category_id: category id
+        product_id: product id
+        created_at: created date
+        deleted_at: updated date
+  errors:
+    format: "%{message}"

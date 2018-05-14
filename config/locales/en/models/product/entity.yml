@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "%{errors}"
+    attributes:
+      product/entity:
+        id: id
+        name: product name
+        price: price
+        quantity: quantity
+        created_at: created date
+        deleted_at: updated date
+  errors:
+    format: "%{message}"

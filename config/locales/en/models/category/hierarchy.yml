@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "%{errors}"
+    attributes:
+      category/hierarchy:
+        id: id
+        category_id: category id
+        parent_category_id: parent category id
+        created_at: created date
+        deleted_at: updated date
+  errors:
+    format: "%{message}"
+  

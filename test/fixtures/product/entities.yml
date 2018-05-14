@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+product_1:
+  name: 'product1'
+  price: 5000
+  quantity: 2
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
+
+product_2:
+  name: 'product2'
+  price: 30000
+  quantity: 2
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
+
+product_3:
+  name: 'product3'
+  price: 50000
+  quantity: 5
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
